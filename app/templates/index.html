@@ -1,0 +1,29 @@
+{% extends 'base.html' %} 
+
+{% block header %}
+<div class="jumbotron">
+    <h2 class="display-4">Your Little Black Book</h3>
+</div>
+{% endblock %}
+
+
+{% block content %}
+
+<div class="row gy-25">
+<div class="card mt-3 bg-danger-subtle border-danger">
+    <div class="card-header"><strong>Search</strong></div>
+    <div class="card-body">
+        <form action="">
+            <div class="input-group">
+                <input type="text" class="form-control text-muted" placeholder="Search for a contact...">
+                <button type="submit" class="btn btn-danger">Search</button>
+            </div>
+        </form>
+    </div>
+</div>
+</div>
+<div class="row">
+<a href={{url_for('addcontact')}} class="btn btn-danger btn-lg active my-3" role="button" aria-pressed="true"'><b>or Add a New Contact</b></a>
+</div>
+
+{% endblock %}

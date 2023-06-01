@@ -1,0 +1,12 @@
+nav{
+    font-style: oblique;
+    font-family: Goudy Old Style;
+}
+
+.jumbotron,h1{
+    font-family: Garamond;
+}
+
+.btn,.form-control,.card-header{
+    font-family: Noto;
+}
