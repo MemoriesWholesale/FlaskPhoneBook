@@ -10,7 +10,7 @@ class Contact(db.Model):
     phone = db.Column(db.Numeric(10), nullable=False, unique=True)
     address = db.Column(db.String(50), nullable=True)
     date_created = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
-    user = db.Column(db.Integer,db.ForeignKey('user.id'))
+    user_id = db.Column(db.Integer,db.ForeignKey('user.id'))
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
@@ -28,7 +28,7 @@ class User(db.Model,UserMixin):
     password = db.Column(db.String(255),nullable=False)
     phone = db.Column(db.Numeric(15),nullable=False)
     date_joined = db.Column(db.DateTime,nullable=False,default=datetime.utcnow)
-    contacts = db.relationship('Contact',backref='user')
+    contacts = db.relationship('Contact',backref='user_id')
 
     def __init__(self,**kwargs):
         super().__init__(**kwargs)
