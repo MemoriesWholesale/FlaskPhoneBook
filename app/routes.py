@@ -83,7 +83,8 @@ def logout():
 @app.route('/viewcontacts',methods=['GET','Post'])
 @login_required
 def viewcontacts():
-    return render_template('viewcontacts.html')
+    contacts = db.session.execute(db.select(Contact).where(Contact.user==current_user.id)).scalars().all()
+    return render_template('viewcontacts.html',contacts=contacts)
 
 @app.route('/editcontact',methods=['GET','Post'])
 @login_required
