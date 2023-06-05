@@ -1,0 +1,27 @@
+{%extends 'base.html'%}
+
+{% block header %}
+<h1><strong>Log In</strong></h1> 
+{%endblock%} 
+
+{% block content %} 
+<div class="row">
+    <div class="col">
+        <div class="card mt-3">
+            <div class="card-body bg-danger-subtle">
+                <form action="" method="post">
+                    {{ form.username.label }}
+                    {{ form.username(class='form-control', placeholder='Enter Username') }}
+
+                    {{ form.password.label }}
+                    {{ form.password(class='form-control', placeholder='Enter Password') }}
+
+                    {{ form.submit(class='btn btn-outline-danger w-100 mt-3') }}
+
+                    <a href={{url_for('signup')}}>Don't have an account? Sign Up!</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{%endblock%} 
